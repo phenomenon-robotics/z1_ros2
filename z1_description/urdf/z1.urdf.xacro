@@ -6,10 +6,12 @@
     <xacro:arg name="prefix" default="" />
     <xacro:arg name="controllers" default="$(find z1_bringup)/config/z1_controllers.yaml" />
     <xacro:arg name="sim_ignition" default="true" />
-    <xacro:arg name="with_gripper" default="true" />
+    <!-- kept only for compatibility, no longer used -->
+    <xacro:arg name="with_gripper" default="false" />
 
     <xacro:include filename="$(find z1_description)/urdf/const.xacro" />
     <xacro:include filename="$(find z1_description)/urdf/z1.ros2_control.xacro" />
+
     <material name="Grey">
         <color rgba="0.3 0.3 0.3 1.0" />
     </material>
@@ -32,8 +34,7 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://z1_description/meshes/collision/z1_Link00.STL"
-                    scale="1 1 1" />
+                <mesh filename="package://z1_description/meshes/collision/z1_Link00.STL" scale="1 1 1" />
             </geometry>
             <origin rpy="0 0 0" xyz="0 0 ${motor_height/2.0}" />
         </collision>
@@ -53,8 +54,7 @@
         <child link="link01" />
         <axis xyz="0 0 1" />
         <dynamics damping="${jointDamping}" friction="${jointFriction}" />
-        <limit effort="${torqueMax}" velocity="${velocityMax}" lower="${joint1_PositionMin}"
-            upper="${joint1_PositionMax}" />
+        <limit effort="${torqueMax}" velocity="${velocityMax}" lower="${joint1_PositionMin}" upper="${joint1_PositionMax}" />
     </joint>
 
     <link name="link01">
@@ -67,8 +67,7 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://z1_description/meshes/collision/z1_Link01.STL"
-                    scale="1 1 1" />
+                <mesh filename="package://z1_description/meshes/collision/z1_Link01.STL" scale="1 1 1" />
             </geometry>
         </collision>
         <inertial>
@@ -87,8 +86,7 @@
         <child link="link02" />
         <axis xyz="0 1 0" />
         <dynamics damping="${2*jointDamping}" friction="${2*jointFriction}" />
-        <limit effort="${2*torqueMax}" velocity="${velocityMax}" lower="${joint2_PositionMin}"
-            upper="${joint2_PositionMax}" />
+        <limit effort="${2*torqueMax}" velocity="${velocityMax}" lower="${joint2_PositionMin}" upper="${joint2_PositionMax}" />
     </joint>
 
     <link name="link02">
@@ -101,8 +99,7 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://z1_description/meshes/collision/z1_Link02.STL"
-                    scale="1 1 1" />
+                <mesh filename="package://z1_description/meshes/collision/z1_Link02.STL" scale="1 1 1" />
             </geometry>
         </collision>
         <inertial>
@@ -121,8 +118,7 @@
         <child link="link03" />
         <axis xyz="0 1 0" />
         <dynamics damping="${jointDamping}" friction="${jointFriction}" />
-        <limit effort="${torqueMax}" velocity="${velocityMax}" lower="${joint3_PositionMin}"
-            upper="${joint3_PositionMax}" />
+        <limit effort="${torqueMax}" velocity="${velocityMax}" lower="${joint3_PositionMin}" upper="${joint3_PositionMax}" />
     </joint>
 
     <link name="link03">
@@ -135,8 +131,7 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://z1_description/meshes/collision/z1_Link03.STL"
-                    scale="1 1 1" />
+                <mesh filename="package://z1_description/meshes/collision/z1_Link03.STL" scale="1 1 1" />
             </geometry>
         </collision>
         <inertial>
@@ -155,8 +150,7 @@
         <child link="link04" />
         <axis xyz="0 1 0" />
         <dynamics damping="${jointDamping}" friction="${jointFriction}" />
-        <limit effort="${torqueMax}" velocity="${velocityMax}" lower="${joint4_PositionMin}"
-            upper="${joint4_PositionMax}" />
+        <limit effort="${torqueMax}" velocity="${velocityMax}" lower="${joint4_PositionMin}" upper="${joint4_PositionMax}" />
     </joint>
 
     <link name="link04">
@@ -169,8 +163,7 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://z1_description/meshes/collision/z1_Link04.STL"
-                    scale="1 1 1" />
+                <mesh filename="package://z1_description/meshes/collision/z1_Link04.STL" scale="1 1 1" />
             </geometry>
         </collision>
         <inertial>
@@ -189,8 +182,7 @@
         <child link="link05" />
         <axis xyz="0 0 1" />
         <dynamics damping="${jointDamping}" friction="${jointFriction}" />
-        <limit effort="${torqueMax}" velocity="${velocityMax}" lower="${joint5_PositionMin}"
-            upper="${joint5_PositionMax}" />
+        <limit effort="${torqueMax}" velocity="${velocityMax}" lower="${joint5_PositionMin}" upper="${joint5_PositionMax}" />
     </joint>
 
     <link name="link05">
@@ -203,8 +195,7 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://z1_description/meshes/collision/z1_Link05.STL"
-                    scale="1 1 1" />
+                <mesh filename="package://z1_description/meshes/collision/z1_Link05.STL" scale="1 1 1" />
             </geometry>
         </collision>
         <inertial>
@@ -223,8 +214,7 @@
         <child link="link06" />
         <axis xyz="1 0 0" />
         <dynamics damping="${jointDamping}" friction="${jointFriction}" />
-        <limit effort="${torqueMax}" velocity="${velocityMax}" lower="${joint6_PositionMin}"
-            upper="${joint6_PositionMax}" />
+        <limit effort="${torqueMax}" velocity="${velocityMax}" lower="${joint6_PositionMin}" upper="${joint6_PositionMax}" />
     </joint>
 
     <link name="link06">
@@ -237,8 +227,7 @@
         </visual>
         <collision>
             <geometry>
-                <mesh filename="package://z1_description/meshes/collision/z1_Link06.STL"
-                    scale="1 1 1" />
+                <mesh filename="package://z1_description/meshes/collision/z1_Link06.STL" scale="1 1 1" />
             </geometry>
         </collision>
         <inertial>
@@ -251,81 +240,41 @@
         </inertial>
     </link>
 
-    <xacro:if value="$(arg with_gripper)">
-        <joint name="gripperStatorLink" type="fixed">
-            <origin rpy="0 0 0" xyz="0.051 0.0 0.0" />
-            <parent link="link06" />
-            <child link="gripperStator" />
-        </joint>
+    <!-- Pollinator tool -->
+    <joint name="jointPollinatorTool" type="fixed">
+        <origin rpy="0 0 0" xyz="0.18 0.0 0.0" />
+        <parent link="link06" />
+        <child link="pollinatorTool" />
+    </joint>
 
-        <link name="gripperStator">
-            <visual>
-                <geometry>
-                    <mesh filename="package://z1_description/meshes/visual/z1_GripperStator.dae"
-                        scale="1 1 1" />
-                </geometry>
-                <material name="Grey" />
-            </visual>
-            <collision>
-                <geometry>
-                    <mesh filename="package://z1_description/meshes/collision/z1_GripperStator.STL"
-                        scale="1 1 1" />
-                </geometry>
-            </collision>
-            <inertial>
-                <origin rpy="0 0 0"
-                    xyz="${GripperStator_ComX} ${GripperStator_ComY} ${GripperStator_ComZ}" />
-                <mass value="${GripperStator_Mass}" />
-                <inertia
-                    ixx="${GripperStator_Ixx}" ixy="${GripperStator_Ixy}" ixz="${GripperStator_Ixz}"
-                    iyy="${GripperStator_Iyy}" iyz="${GripperStator_Iyz}"
-                    izz="${GripperStator_Izz}" />
-            </inertial>
-        </link>
+    <link name="pollinatorTool">
+        <visual>
+            <origin rpy="0 1.57079632679 0" xyz="-0.07 0 0" />
+            <geometry>
+                <cylinder radius="0.0075" length="0.14" />
+            </geometry>
+            <material name="Grey" />
+        </visual>
 
-        <joint name="jointGripper" type="revolute">
-            <origin rpy="0 0 0" xyz="0.049 0.0 0" />
-            <parent link="gripperStator" />
-            <child link="gripperMover" />
-            <axis xyz="0 1 0" />
-            <dynamics damping="${jointDamping}" friction="${jointFriction}" />
-            <limit effort="${torqueMax}" velocity="${velocityMax}" lower="${Gripper_PositionMin}"
-                upper="${Gripper_PositionMax}" />
-        </joint>
+        <collision>
+            <origin rpy="0 1.57079632679 0" xyz="-0.07 0 0" />
+            <geometry>
+                <cylinder radius="0.0075" length="0.14" />
+            </geometry>
+        </collision>
 
-        <link name="gripperMover">
-            <visual>
-                <geometry>
-                    <mesh filename="package://z1_description/meshes/visual/z1_GripperMover.dae"
-                        scale="1 1 1" />
-                </geometry>
-                <material name="Grey" />
-            </visual>
-            <collision>
-                <geometry>
-                    <mesh filename="package://z1_description/meshes/collision/z1_GripperMover.STL"
-                        scale="1 1 1" />
-                </geometry>
-            </collision>
-            <inertial>
-                <origin rpy="0 0 0"
-                    xyz="${GripperMover_ComX} ${GripperMover_ComY} ${GripperMover_ComZ}" />
-                <mass value="${GripperMover_Mass}" />
-                <inertia
-                    ixx="${GripperMover_Ixx}" ixy="${GripperMover_Ixy}" ixz="${GripperMover_Ixz}"
-                    iyy="${GripperMover_Iyy}" iyz="${GripperMover_Iyz}"
-                    izz="${GripperMover_Izz}" />
-            </inertial>
-        </link>
-
-        <gazebo reference="gripperStator">
-            <self_collide>true</self_collide>
-        </gazebo>
-
-        <gazebo reference="gripperMover">
-            <self_collide>true</self_collide>
-        </gazebo>
-    </xacro:if>
+        <inertial>
+            <origin rpy="0 0 0" xyz="-0.07 0 0" />
+            <mass value="0.10" />
+            <inertia
+                ixx="0.000165"
+                ixy="0.0"
+                ixz="0.0"
+                iyy="0.000165"
+                iyz="0.0"
+                izz="0.000003" />
+        </inertial>
+    </link>
 
     <xacro:if value="$(arg sim_ignition)">
         <gazebo reference="world" />
@@ -344,6 +293,6 @@
         name="$(arg name)"
         prefix="$(arg prefix)"
         sim_ignition="$(arg sim_ignition)"
-        with_gripper="$(arg with_gripper)" />
+        with_gripper="false" />
 
 </robot>
