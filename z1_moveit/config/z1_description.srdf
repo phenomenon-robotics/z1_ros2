@@ -16,7 +16,7 @@
     <group_state name="home" group="z1_arm">
         <joint name="joint1" value="0"/>
         <joint name="joint2" value="0"/>
-        <joint name="joint3" value="0"/>
+        <joint name="joint3" value="-0.1"/>
         <joint name="joint4" value="0"/>
         <joint name="joint5" value="0"/>
         <joint name="joint6" value="0"/>
@@ -24,6 +24,11 @@
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="arm_ee" parent_link="pollinatorTool" group="z1_arm"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_collisions link1="camera_link" link2="link03" reason="Never"/>
+    <disable_collisions link1="camera_link" link2="link04" reason="Never"/>
+    <disable_collisions link1="camera_link" link2="link05" reason="Never"/>
+    <disable_collisions link1="camera_link" link2="pollinatorTool" reason="Never"/>
+    <disable_collisions link1="camera_link" link2="link06" reason="Adjacent"/>   
     <disable_collisions link1="pollinatorTool" link2="link03" reason="Never"/>
     <disable_collisions link1="pollinatorTool" link2="link04" reason="Never"/>
     <disable_collisions link1="pollinatorTool" link2="link05" reason="Never"/>

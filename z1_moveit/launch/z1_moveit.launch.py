@@ -71,7 +71,7 @@ def launch_setup(context, *args, **kwargs):
     )
 
     return [
-        bringup_launch,
+        # bringup_launch,
         generate_move_group_launch(moveit_config),
         rviz_launch,
     ]

@@ -12,6 +12,8 @@
     <xacro:include filename="$(find z1_description)/urdf/const.xacro" />
     <xacro:include filename="$(find z1_description)/urdf/z1.ros2_control.xacro" />
 
+    <xacro:include filename="$(find realsense2_description)/urdf/_d405.urdf.xacro" />
+
     <material name="Grey">
         <color rgba="0.3 0.3 0.3 1.0" />
     </material>
@@ -275,6 +277,10 @@
                 izz="0.000003" />
         </inertial>
     </link>
+
+    <xacro:sensor_d405 parent="link06" use_nominal_extrinsics="true">
+        <origin xyz="0.12 0 -0.02" rpy="0 0 0"/>
+    </xacro:sensor_d405>
 
     <xacro:if value="$(arg sim_ignition)">
         <gazebo reference="world" />
