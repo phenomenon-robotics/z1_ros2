@@ -278,7 +278,7 @@
         </inertial>
     </link>
 
-    <xacro:sensor_d405 parent="link06" use_nominal_extrinsics="true">
+    <xacro:sensor_d405 parent="link06" name="arm_camera" use_nominal_extrinsics="true">
         <origin xyz="0.12 0 -0.02" rpy="0 0 0"/>
     </xacro:sensor_d405>
 
