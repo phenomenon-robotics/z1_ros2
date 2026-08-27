@@ -18,11 +18,11 @@
         <color rgba="0.3 0.3 0.3 1.0" />
     </material>
 
-    <link name="world" />
+    <link name="arm_base" />
 
     <joint name="base_static_joint" type="fixed">
         <origin rpy="0 0 0" xyz="0 0 0" />
-        <parent link="world" />
+        <parent link="arm_base" />
         <child link="link00" />
     </joint>
 
@@ -283,7 +283,7 @@
     </xacro:sensor_d405>
 
     <xacro:if value="$(arg sim_ignition)">
-        <gazebo reference="world" />
+        <gazebo reference="arm_base" />
         <gazebo>
             <plugin filename="libign_ros2_control-system.so"
                 name="ign_ros2_control::IgnitionROS2ControlPlugin">
